@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  pennsieve-agent:
+    env_file:
+      - dev.env
+    image: pennsieve-agent
+    volumes:
+      - ./logs:/service/logs
+      - ./data:/mnt/efs
+    container_name: pennsieve-agent
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    entrypoint: /service/bootstrap
