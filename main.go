@@ -74,6 +74,17 @@ func main() {
 	fmt.Println("DATASET_ID: ", datasetID)
 	fmt.Println("INTEGRATION_ID: ", integrationID)
 
+	// validate
+	entries, err := os.ReadDir(os.Getenv("OUTPUT_DIR"))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if len(entries) == 0 {
+		fmt.Println("error, no files to process")
+		os.Exit(1)
+	}
+
 	cmd := exec.Command("/bin/sh", "./agent.sh", datasetID, integrationID)
 	out, err := cmd.Output()
 	if err != nil {
