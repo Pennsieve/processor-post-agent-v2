@@ -68,9 +68,6 @@ func main() {
 	}
 	fmt.Println("PENNSIEVE_API_HOST: ", os.Getenv("PENNSIEVE_API_HOST"))
 	fmt.Println("PENNSIEVE_UPLOAD_BUCKET: ", os.Getenv("PENNSIEVE_UPLOAD_BUCKET"))
-
-	fmt.Println("API_KEY: ", os.Getenv("PENNSIEVE_API_KEY"))
-	fmt.Println("API_SECRET: ", os.Getenv("PENNSIEVE_API_SECRET"))
 	fmt.Println("DATASET_ID: ", datasetID)
 	fmt.Println("INTEGRATION_ID: ", integrationID)
 
